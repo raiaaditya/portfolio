@@ -1,0 +1,14 @@
+packages:
+  "framer-motion": "For complex scroll animations, hover states, and page transitions"
+  "react-simple-typewriter": "For the typing effect in the hero section"
+  "clsx": "Utility for constructing className strings conditionally"
+  "tailwind-merge": "Utility to merge tailwind classes without style conflicts"
+
+images:
+  - path: "artifacts/portfolio/public/images/hero-bg.png"
+    description: "Abstract dark background with subtle glowing cyan and purple nebulae, futuristic, deep space vibe, highly detailed, 4k"
+    aspect_ratio: "16:9"
+
+notes:
+  - Static frontend-only application. No backend routes.
+  - Using framer-motion for smooth reveal animations on scroll.
