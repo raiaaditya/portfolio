@@ -2,9 +2,7 @@ export const portfolioData = {
   hero: {
     name: "Aaditya Rai",
     titles: [
-      "Computer Science Student",
-      "Data Analyst",
-      "Software Developer"
+      "Data Scientist"
     ],
     tagline: "Solving real-world problems with data and software",
     githubUrl: "https://github.com/raiaaditya" // TODO: Replace with your GitHub profile URL
@@ -110,7 +108,7 @@ export const portfolioData = {
   contact: {
     email: "rai.aaditya0306@gmail.com",
     linkedin: "https://www.linkedin.com/in/aadityarai03/", // TODO: Replace with your LinkedIn profile URL
-    github: "GITHUB_PROFILE_PLACEHOLDER" // TODO: Replace with your GitHub profile URL
+    github: "https://github.com/raiaaditya" // TODO: Replace with your GitHub profile URL
   }
 };
 

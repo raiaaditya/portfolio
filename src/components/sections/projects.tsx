@@ -15,6 +15,23 @@ export function Projects() {
     ? portfolioData.projects 
     : portfolioData.projects.filter(p => p.tags.includes(filter));
 
+  const getImageComment = (project) => {
+    switch (project.id) {
+      case 1:
+        return `ADD IMAGE FOR CARDEKHO PROJECT HERE\nExample path: assets/images/cardekho.jpg`;
+      case 2:
+        return `ADD IMAGE FOR CRIME PROJECT HERE\nExample path: assets/images/crime.jpg`;
+      case 3:
+        return `ADD IMAGE FOR SWASTIFY PROJECT HERE\nExample path: assets/images/swastify.jpg`;
+      case 4:
+        return `ADD IMAGE FOR AI PET HEALTH CHATBOT PROJECT HERE\nExample path: assets/images/pet-health.jpg`;
+      case 5:
+        return `ADD IMAGE FOR TRAFFIC SIGNAL PROJECT HERE\nExample path: assets/images/traffic.jpg`;
+      default:
+        return 'ADD IMAGE HERE';
+    }
+  };
+
   return (
     <section id="projects" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,15 +68,23 @@ export function Projects() {
                 transition={{ duration: 0.3 }}
                 className="group glass-card rounded-3xl overflow-hidden flex flex-col hover:-translate-y-2 hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 border-gradient"
               >
-                {/* Image Placeholder (since no specific images were provided, using a styled div or abstract placeholder) */}
-                <div className="h-48 bg-gradient-to-br from-gray-800 to-black relative overflow-hidden flex items-center justify-center border-b border-white/5">
-                  <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPC9zdmc+')] opacity-20" />
-                  <h3 className="text-2xl font-black text-white/20 uppercase tracking-widest px-4 text-center">
-                    {project.title.split(' ')[0]}
-                  </h3>
+                {/* Image Placeholder with background image support */}
+                <div 
+                  className="h-48 relative overflow-hidden border-b border-white/5" 
+                  style={{ 
+                    backgroundSize: 'cover', 
+                    backgroundPosition: 'center' 
+                    /* ADD IMAGE HERE */
+                    // backgroundImage: url("assets/images/your-image.jpg")
+                  }}
+                >
+                  {/* {getImageComment(project)} */}
+                  
+                  {/* Dark overlay for readability */}
+                  <div className="absolute inset-0 bg-black/50 z-0"></div>
                   
                   {/* Overlay on hover */}
-                  <div className="absolute inset-0 bg-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                  <div className="absolute inset-0 bg-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px] z-10">
                     <a 
                       href={project.githubUrl} 
                       target="_blank" 

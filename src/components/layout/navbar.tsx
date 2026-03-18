@@ -57,7 +57,7 @@ export function Navbar() {
             onClick={() => scrollTo("hero")}
             className="text-2xl font-display font-black tracking-tighter cursor-pointer"
           >
-            <span className="text-gradient">AR</span>
+            <span className="text-gradient">Aaditya</span>
           </button>
 
           {/* Desktop Nav */}
