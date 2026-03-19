@@ -115,8 +115,10 @@ export const portfolioData = {
 export const navLinks = [
   { name: "Home", href: "hero" },
   { name: "About", href: "about" },
+  { name: "Education", href: "education" },
   { name: "Skills", href: "skills" },
   { name: "Projects", href: "projects" },
   { name: "Timeline", href: "timeline" },
+  { name: "Certifications", href: "certifications" },
   { name: "Contact", href: "contact" }
 ];
