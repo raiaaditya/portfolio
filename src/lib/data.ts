@@ -44,42 +44,47 @@ export const portfolioData = {
   projects: [
     {
       id: 1,
-      title: "CarDekho Car Price Prediction",
-      description: "Machine learning model predicting used car prices using regression algorithms based on various vehicle features.",
+      title: "CarDekho Car Price Prediction", // TODO: Add project title here
+      description: "Machine learning model predicting used car prices using regression algorithms based on various vehicle features.", // TODO: Add project description here
       tags: ["Python", "Machine Learning", "Pandas", "Scikit-learn"],
-      githubUrl: "https://github.com/raiaaditya/Car_Price_Predictor_Devops", // ADD_PROJECT_REPOSITORY_LINK_HERE - Update with actual repo URL
+      githubUrl: "https://github.com/raiaaditya/Car_Price_Predictor_Devops", // TODO: Add project repository link here
+      image: "/assets/images/cardekho.jpg", // TODO: Add project background image path here
       featured: true
     },
     {
       id: 2,
-      title: "Crime Data Analysis",
-      description: "Python visualization dashboard analyzing crime patterns and trends to help understand regional safety metrics.",
+      title: "Crime Data Analysis", // TODO: Add project title here
+      description: "Python visualization dashboard analyzing crime patterns and trends to help understand regional safety metrics.", // TODO: Add project description here
       tags: ["Python", "Pandas", "Matplotlib", "Data Visualization"],
-      githubUrl: "https://github.com/raiaaditya/Crime_data_records", // ADD_PROJECT_REPOSITORY_LINK_HERE - Update with actual repo URL
+      githubUrl: "https://github.com/raiaaditya/Crime_data_records", // TODO: Add project repository link here
+      image: "/assets/images/crime.jpg", // TODO: Add project background image path here
       featured: true
     },
     {
       id: 3,
-      title: "Swastify Fitness App",
-      description: "Comprehensive Android fitness tracking app providing personalized workout plans and progress monitoring.",
+      title: "Swastify Fitness App", // TODO: Add project title here
+      description: "Comprehensive Android fitness tracking app providing personalized workout plans and progress monitoring.", // TODO: Add project description here
       tags: ["Kotlin", "Android", "Firebase"],
-      githubUrl: "https://github.com/raiaaditya/SwastifyApp", // ADD_PROJECT_REPOSITORY_LINK_HERE - Update with actual repo URL
+      githubUrl: "https://github.com/raiaaditya/SwastifyApp", // TODO: Add project repository link here
+      image: "/assets/images/fitness.jpg", // TODO: Add project background image path here
       featured: true
     },
     {
       id: 4,
-      title: "AI Pet Health Chatbot",
-      description: "AI-powered chatbot application providing pet health queries, basic diagnostic info, and care recommendations.",
-      tags: ["Python", "AI", "Flask", "NLP"],
-      githubUrl: "https://github.com/raiaaditya", // ADD_PROJECT_REPOSITORY_LINK_HERE - Update with actual repo URL
+      title: "Packet Analyzer Tool", // TODO: Add project title here
+      description: "Network traffic analysis tool extracting, decoding, and visualizing packet data to understand network behavior and security.", // TODO: Add project description here
+      tags: ["Python", "Networking", "Wireshark", "Security"],
+      githubUrl: "https://github.com/raiaaditya/packet-analyzer", // TODO: Add project repository link here
+      image: "/assets/images/packet-analyzer.jpg", // TODO: Add project background image path here
       featured: false
     },
     {
       id: 5,
-      title: "Traffic Signal Adjustment System",
-      description: "Automated traffic signal timing system utilizing real-time traffic data and computer vision to optimize flow.",
+      title: "Traffic Signal Adjustment System", // TODO: Add project title here
+      description: "Automated traffic signal timing system utilizing real-time traffic data and computer vision to optimize flow.", // TODO: Add project description here
       tags: ["Python", "Computer Vision", "IoT", "AI"],
-      githubUrl: "https://github.com/raiaaditya", // ADD_PROJECT_REPOSITORY_LINK_HERE - Update with actual repo URL
+      githubUrl: "https://github.com/raiaaditya", // TODO: Add project repository link here
+      image: "/assets/images/traffic_signal.png", // TODO: Add project background image path here
       featured: false
     }
   ],

@@ -11,26 +11,9 @@ export function Projects() {
   // Extract unique tags for filters
   const allTags = ["All", ...Array.from(new Set(portfolioData.projects.flatMap(p => p.tags)))].slice(0, 6);
 
-  const filteredProjects = filter === "All" 
-    ? portfolioData.projects 
+  const filteredProjects = filter === "All"
+    ? portfolioData.projects
     : portfolioData.projects.filter(p => p.tags.includes(filter));
-
-  const getImageComment = (project) => {
-    switch (project.id) {
-      case 1:
-        return `ADD IMAGE FOR CARDEKHO PROJECT HERE\nExample path: assets/images/cardekho.jpg`;
-      case 2:
-        return `ADD IMAGE FOR CRIME PROJECT HERE\nExample path: assets/images/crime.jpg`;
-      case 3:
-        return `ADD IMAGE FOR SWASTIFY PROJECT HERE\nExample path: assets/images/swastify.jpg`;
-      case 4:
-        return `ADD IMAGE FOR AI PET HEALTH CHATBOT PROJECT HERE\nExample path: assets/images/pet-health.jpg`;
-      case 5:
-        return `ADD IMAGE FOR TRAFFIC SIGNAL PROJECT HERE\nExample path: assets/images/traffic.jpg`;
-      default:
-        return 'ADD IMAGE HERE';
-    }
-  };
 
   return (
     <section id="projects" className="py-24 relative">
@@ -45,8 +28,8 @@ export function Projects() {
               onClick={() => setFilter(tag)}
               className={cn(
                 "px-5 py-2 rounded-full text-sm font-medium transition-all duration-300",
-                filter === tag 
-                  ? "bg-cyan-500 text-white shadow-lg shadow-cyan-500/25" 
+                filter === tag
+                  ? "bg-cyan-500 text-white shadow-lg shadow-cyan-500/25"
                   : "glass text-muted-foreground hover:text-white hover:border-cyan-500/50"
               )}
             >
@@ -66,62 +49,61 @@ export function Projects() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
-                className="group glass-card rounded-3xl overflow-hidden flex flex-col hover:-translate-y-2 hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 border-gradient"
+                className="group relative rounded-3xl overflow-hidden flex flex-col min-h-[400px] hover:-translate-y-2 hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 border border-white/10"
               >
-                {/* Image Placeholder with background image support */}
-                <div 
-                  className="h-48 relative overflow-hidden border-b border-white/5" 
-                  style={{ 
-                    backgroundSize: 'cover', 
-                    backgroundPosition: 'center' 
-                    /* ADD IMAGE HERE */
-                    // backgroundImage: url("assets/images/your-image.jpg")
-                  }}
-                >
-                  {/* {getImageComment(project)} */}
-                  
-                  {/* Dark overlay for readability */}
-                  <div className="absolute inset-0 bg-black/50 z-0"></div>
-                  
-                  {/* Overlay on hover */}
-                  <div className="absolute inset-0 bg-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px] z-10">
-                    <a 
-                      href={project.githubUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="p-3 bg-black/50 rounded-full text-white hover:bg-cyan-500 hover:scale-110 transition-all"
-                    >
-                      <ExternalLink size={24} />
-                    </a>
-                  </div>
-                </div>
+                {/* Full Background Image */}
+                <img
+                  src={(project as any).image}
+                  alt={project.title}
+                  className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 z-0"
+                />
 
-                <div className="p-6 flex-1 flex flex-col">
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm mb-6 flex-1">
-                    {project.description}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tags.map(tag => (
-                      <span key={tag} className="text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-cyan-300">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  
-                  <div className="pt-4 border-t border-white/10 flex justify-between items-center mt-auto">
-                    <a 
+                {/* Dark overlay for readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/20 z-0 transition-opacity duration-300 group-hover:opacity-90"></div>
+
+                {/* Content Container */}
+                <div className="relative z-10 p-6 flex-1 flex flex-col h-full pointer-events-none">
+                  {/* External Link top-right */}
+                  <div className="flex justify-end mb-auto pointer-events-auto">
+                    <a
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-white transition-colors"
+                      className="p-2.5 bg-black/40 backdrop-blur-md rounded-full text-white hover:bg-cyan-500 hover:scale-110 transition-all shadow-lg border border-white/10 opacity-0 group-hover:opacity-100 duration-300"
+                      aria-label="View Project"
                     >
-                      <Github size={16} />
-                      Source Code
+                      <ExternalLink size={20} />
                     </a>
+                  </div>
+
+                  {/* Project Details bottom */}
+                  <div className="mt-auto pointer-events-auto pt-4">
+                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors drop-shadow-md">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-200 text-sm mb-6 line-clamp-3 drop-shadow">
+                      {project.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.tags.map(tag => (
+                        <span key={tag} className="text-xs px-2.5 py-1 rounded-md bg-black/40 backdrop-blur-sm border border-white/10 text-cyan-300">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="pt-4 border-t border-white/20 flex justify-between items-center">
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-sm font-medium text-white hover:text-cyan-400 transition-colors drop-shadow"
+                      >
+                        <Github size={18} />
+                        Source Code
+                      </a>
+                    </div>
                   </div>
                 </div>
               </motion.div>
