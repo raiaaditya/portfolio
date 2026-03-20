@@ -7,6 +7,7 @@ import { Skills } from "@/components/sections/skills";
 import { Projects } from "@/components/sections/projects";
 import { Timeline } from "@/components/sections/timeline";
 import { Certifications } from "@/components/sections/certifications";
+import { Achievements } from "@/components/sections/achievements";
 import { GithubStats } from "@/components/sections/github-stats";
 import { Contact } from "@/components/sections/contact";
 
@@ -23,6 +24,7 @@ export default function Home() {
         <Projects />
         <Timeline />
         <Certifications />
+        <Achievements />
         <GithubStats />
         <Contact />
       </main>
