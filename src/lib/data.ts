@@ -80,11 +80,11 @@ export const portfolioData = {
     },
     {
       id: 5,
-      title: "Traffic Signal Adjustment System", // TODO: Add project title here
-      description: "Automated traffic signal timing system utilizing real-time traffic data and computer vision to optimize flow.", // TODO: Add project description here
-      tags: ["Python", "Computer Vision", "IoT", "AI"],
-      githubUrl: "https://github.com/raiaaditya", // TODO: Add project repository link here
-      image: "/assets/images/traffic_signal.png", // TODO: Add project background image path here
+      title: "WhatsApp Chat Analysis", // TODO: Add project title here
+      description: "An interactive Streamlit-based web app that analyzes WhatsApp chat data to generate insights like message statistics, user activity, word usage, emoji trends, and activity heatmaps.", // TODO: Add project description here
+      tags: ["Python", "Data Visualization", "NLP", "WordCloud", "IoT", "AI"],
+      githubUrl: "https://github.com/raiaaditya/whatsapp-chat-analysis", // TODO: Add project repository link here
+      image: "/assets/images/whatsapp-chat-analysis.png", // TODO: Add project background image path here
       featured: false
     }
   ],
